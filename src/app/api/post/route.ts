@@ -2,5 +2,5 @@ import type { NextRequest } from 'next/server'
 import { createTechnology } from '@/tools/DataManager';
 
 export function POST(request: NextRequest) {
-    createTechnology(request);
+    return createTechnology(request);
 }
