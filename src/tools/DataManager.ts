@@ -1,4 +1,4 @@
-import { MongoClient, Db, Collection, FindCursor, InsertOneResult, ObjectId, UpdateResult, DeleteResult } from "mongodb";
+import { MongoClient, Collection, InsertOneResult, ObjectId, UpdateResult, DeleteResult } from "mongodb";
 import { NextRequest, NextResponse } from 'next/server';
 import sanitizeHtml from 'sanitize-html';
 import { Technology, Course } from "@/tools/data.model";
