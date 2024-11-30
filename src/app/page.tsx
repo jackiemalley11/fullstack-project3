@@ -1,15 +1,20 @@
 import { getTechnologies } from '@/tools/DataManager';
-import { Technology } from '@/tools/data.model';
+import { Courses, Technology } from '@/tools/data.model';
+import { List } from "./List";
 
 export default async function Home() {
 
-  const technologies:Technology[] = await getTechnologies(); 
+  const data = await getTechnologies(); 
+  const technologies : Technology[] = data.technologies;
+  const courses : Courses[] = data.courses;
 
   return (
     <div className="font-bold text-sm p-4">
-      <pre>
-        {JSON.stringify(technologies, null, "\t")}
-      </pre>
+      {technologies.length > 0 ?
+				<List technologies={technologies} courses={courses}/>
+			:
+				<>There are currently no technologies in the database :(</>
+			}
     </div>
   );
   
